@@ -1,7 +1,7 @@
-import { ADD_TODO } from '../actions';
+import { ADD_TODO, RENDER_TODO_LIST } from '../actions';
 
 const initialState = {
-  toDoList: []
+  toDoList: [],
 };
 
 export default function toDoApp(state = initialState, action) {
@@ -10,12 +10,17 @@ export default function toDoApp(state = initialState, action) {
       let newToDoList = [
         ...state.toDoList,
         {
-          ...action.toDoItem
-        }
+          ...action.toDoItem,
+        },
       ];
       return {
         ...state,
-        toDoList: newToDoList
+        toDoList: newToDoList,
+      };
+    case RENDER_TODO_LIST:
+      return {
+        ...state,
+        toDoList: action.toDoList,
       };
     default:
       return state;
