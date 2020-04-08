@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToDo } from '../actions';
+import { addToDo } from '../../actions';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -10,7 +10,7 @@ let AddToDo = ({ dispatch }) => {
 
   return (
     <Form
-      onSubmit={e => {
+      onSubmit={(e) => {
         e.preventDefault();
         if (!input.value.trim()) {
           return;
@@ -24,7 +24,7 @@ let AddToDo = ({ dispatch }) => {
           <Form.Control
             type="text"
             placeholder="Enter an item"
-            ref={node => {
+            ref={(node) => {
               input = node;
             }}
           />

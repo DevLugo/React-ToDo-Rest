@@ -3,10 +3,21 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-import AddToDo from './containers/AddToDo';
-import ToDoListContainer from './containers/ToDoListContainer';
+import AddToDo from './containers/todo/AddToDo';
+import ToDoListContainer from './containers/todo/ToDoListContainer';
 import Navigation from './components/Navigation';
 import { Route } from 'react-router-dom';
+import SignIn from './containers/auth/SignIn';
+import SignUp from './containers/auth/SignUp';
+
+//Usar child en lugar de route
+/*
+<Provider store ={store}>
+ {children}
+<Provider>
+*/
+
+//conected-react-router
 
 class App extends Component {
   render() {
@@ -14,10 +25,12 @@ class App extends Component {
       <Container>
         <Row className="row">
           <Col xs={12}>
-            <h1>To Do List</h1>
+            <h1>To Do Listss</h1>
             <Navigation />
             <Route exact path="/" component={ToDoListContainer} />
             <Route exact path="/new-item" component={AddToDo} />
+            <Route exact path="/sign-in" component={SignIn} />
+            <Route exact path="/sign-up" component={SignUp} />
           </Col>
         </Row>
       </Container>

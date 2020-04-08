@@ -2,6 +2,7 @@ import { ADD_TODO, RENDER_TODO_LIST } from '../actions';
 
 const initialState = {
   toDoList: [],
+  token: localStorage.getItem('token'),
 };
 
 export default function toDoApp(state = initialState, action) {

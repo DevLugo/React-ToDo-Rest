@@ -15,5 +15,11 @@ export default () => (
     <Link className="btn btn-primary" to="/new-item">
       + Add New
     </Link>
+    <Link className="btn btn-primary" to="/sign-in">
+      + SignIn
+    </Link>
+    <Link className="btn btn-primary" to="/sign-up">
+      + SignUp
+    </Link>
   </NavigationBar>
 );

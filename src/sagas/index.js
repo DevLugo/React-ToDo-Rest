@@ -9,11 +9,23 @@ export function* fetchToDoList() {
   yield put({ type: RENDER_TODO_LIST, toDoList: data });
 }
 
+export function* createUserSaga() {
+  console.log('-----createUser-----');
+
+  const endpoint =
+    'https://nestjs-todo-rest.azurewebsites.net/api/v1/auth/signup';
+  const response = yield call(fetch, endpoint, { method: 'POST' });
+  const data = yield response.json();
+  console.log('----------');
+  console.log(data);
+  console.log('----------');
+  //yield put({ type: RENDER_TODO_LIST, toDoList: data });
+}
+
 export function* loadToDoList() {
   yield takeEvery(LOAD_TODO_LIST, fetchToDoList);
 }
 
 export default function* rootSaga() {
-  yield all([loadToDoList()]);
+  yield all([loadToDoList(), createUserSaga()]);
 }
-0;
