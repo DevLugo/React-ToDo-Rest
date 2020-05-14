@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import { Route } from 'react-router-dom';
 import SignIn from './containers/auth/SignIn';
 import SignUp from './containers/auth/SignUp';
+import TodoList from './components/todo/TodoList';
 
 //Usar child en lugar de route
 /*
@@ -27,7 +28,7 @@ class App extends Component {
           <Col xs={12}>
             <h1>To Do Listss</h1>
             <Navigation />
-            <Route exact path="/" component={ToDoListContainer} />
+            <Route exact path="/" component={TodoList} />
             <Route exact path="/new-item" component={AddToDo} />
             <Route exact path="/sign-in" component={SignIn} />
             <Route exact path="/sign-up" component={SignUp} />

@@ -20,7 +20,6 @@ export function addToDo(title) {
 }
 
 export function AddUser(payload) {
-  console.log('RRRRRRRRRRR');
   return {
     type: CREATE_USER,
     user: {

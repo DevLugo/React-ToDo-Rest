@@ -16,7 +16,6 @@ const store = createStore(toDoApp, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
 
-store.dispatch(loadToDoList());
 render(
   <Provider store={store}>
     <BrowserRouter>
